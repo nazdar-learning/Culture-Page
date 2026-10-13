@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+  <title>Community | Careers | Nazdar</title>
+  <style>body{margin:0;background:#fff}a{color:var(--nz-text-link)}a:hover{color:var(--color-nz-red-dark)}</style>
+</helmet>
+<div style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary);background:#fff;min-height:100vh">
+  <dc-import name="CareersHeader" page="community" hint-size="100%,150px"></dc-import>
+  <main style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 48px;display:grid;gap:20px">
+      <div class="nz-label" style="color:var(--nz-accent-ink)">Life at Nazdar</div>
+      <h1 style="margin:0;font-size:49px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Community</h1>
+      <p style="margin:0;font-size:20px;line-height:1.55;max-width:680px;text-wrap:pretty">At Nazdar, community involvement is more than just an occasional activity, it’s a lifestyle, one of our core values and an integral part of our environment.</p>
+      <p style="margin:0;line-height:1.55;max-width:680px;text-wrap:pretty">In addition to the many group activities we coordinate and support, we have several employees who invest substantial personal time and resources to programs that support, improve, and enrich the communities in which they live. We believe that employees who invest their time and resources to charitable organizations also enjoy the benefits of personal growth and continued success.</p>
+    </section>
+    <div class="nz-rule-diagonal"></div>
+    <section style="padding:48px 0">
+      <blockquote style="margin:0;display:grid;gap:12px;max-width:820px">
+        <p style="margin:0;font-size:39px;line-height:1.15;letter-spacing:-0.02em;font-weight:700;color:var(--nz-accent-ink);text-wrap:balance">“When you share, there is always enough”</p>
+        <p style="margin:0;line-height:1.55">is the philosophy we embrace and encourage throughout our organization.</p>
+      </blockquote>
+    </section>
+    <section style="padding:48px 0 64px;border-top:1px solid var(--nz-border);display:grid;gap:24px">
+      <div class="nz-label" style="color:var(--nz-text-secondary)">Organizations we support</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));border-top:1px solid var(--nz-border);border-left:1px solid var(--nz-border)">
+        <sc-for list="{{ orgs }}" as="o" hint-placeholder-count="10">
+          <a href="{{ o.href }}" title="{{ o.name }}" style="display:grid;place-items:center;gap:12px;padding:24px 16px;border-right:1px solid var(--nz-border);border-bottom:1px solid var(--nz-border);text-decoration:none;color:var(--nz-text-secondary);font-size:14px;text-align:center;transition:background-color 200ms ease" style-hover="background-color:var(--nz-surface-sunken)">
+            <img src="{{ o.img }}" alt="{{ o.name }}" style="max-width:100%;height:72px;object-fit:contain;display:block">
+            <span>{{ o.name }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+  </main>
+  <dc-import name="CareersFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const B = 'https://www.nazdar.com/portals/0/Promo/Images/';
+const ORGS = [
+  ['Community Blood Center', 'blood_center.png', 'http://www.savealifenow.org/'],
+  ['Harvesters', 'harvesters.png', 'http://www.harvesters.org/'],
+  ['Jadon’s Hope', 'jadons_hope.png', 'http://jadonshope.org/'],
+  ['Joplin Tornado Relief Fund', 'joplin_relief.png', 'http://www.joplintornadoanniversary.com/'],
+  ['Locks of Love', 'locks_of_love.png', 'http://www.locksoflove.org/'],
+  ['March of Dimes', 'march_of_dimes.png', 'http://www.marchofdimes.com/kansas/'],
+  ['The Salvation Army', 'salvation_army.png', 'http://salarmymokan.org/'],
+  ['Toys for Tots', 'toys_for_tots.png', 'http://kansas-city-mo.toysfortots.org/local-coordinator-sites/lco-sites/default.aspx'],
+  ['Take Our Daughters and Sons to Work', 'kids_to_work.png', 'http://www.daughtersandsonstowork.org/wmspage.cfm?parm1=936'],
+  ['In The Name of GRACE', 'grace.png', 'https://inthenameofgrace.org/']
+];
+class Component extends DCLogic {
+  renderVals() { return { orgs: ORGS.map(([name, f, href]) => ({ name, href, img: B + f })) }; }
+}
+</script>
+</body>
+</html>

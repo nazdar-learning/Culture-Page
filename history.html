@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+  <title>History | Careers | Nazdar</title>
+  <style>body{margin:0;background:#fff}a{color:var(--nz-text-link)}a:hover{color:var(--color-nz-red-dark)}</style>
+</helmet>
+<div style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary);background:#fff;min-height:100vh">
+  <dc-import name="CareersHeader" page="history" hint-size="100%,150px"></dc-import>
+  <main style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 48px;display:grid;gap:20px">
+      <div class="nz-label" style="color:var(--nz-accent-ink)">Company</div>
+      <h1 style="margin:0;font-size:49px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Nazdar history</h1>
+      <p style="margin:0;font-size:20px;line-height:1.55;max-width:680px;text-wrap:pretty">Nazdar was founded in 1922 in the back of a small store in Chicago. Nazdar's transformation from these humble beginnings to one of the world's leading manufacturers of screen printing, flexo and digital inks is the story of the emergence of the screen printing industry itself.</p>
+    </section>
+    <div class="nz-rule-diagonal"></div>
+    <section style="padding:48px 0;display:grid;gap:24px">
+      <div class="nz-label" style="color:var(--nz-text-secondary)">Nazdar Company</div>
+      <div style="display:grid">
+        <sc-for list="{{ events }}" as="e" hint-placeholder-count="9">
+          <div style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:16px 32px;padding:20px 0;border-top:1px solid var(--nz-border)">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:20px;color:var(--nz-accent-ink)">{{ e.y }}</div>
+            <p style="margin:0;line-height:1.55;max-width:680px;text-wrap:pretty">{{ e.t }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    <section style="padding:48px 0 64px;border-top:1px solid var(--nz-border);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px 56px">
+      <div style="display:grid;gap:8px;align-content:start">
+        <div class="nz-label" style="color:var(--nz-text-secondary)">Parent company</div>
+        <h2 style="margin:0;font-size:31px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Thrall Enterprises</h2>
+      </div>
+      <p style="margin:0;line-height:1.55;max-width:620px;text-wrap:pretty">Thrall Enterprises began operating as an independent company in 1972 and has grown organically and through acquisitions. The Company’s main operating subsidiary is Nazdar Company, which includes Nazdar Ltd. in the United Kingdom. In addition to these operating subsidiaries, the Company’s investment portfolio consists of investments in real estate, marketable securities, and minority positions in other operating companies.</p>
+    </section>
+  </main>
+  <dc-import name="CareersFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const EV = [
+  ['1922', 'Nazdar was founded in the back of a small store in Chicago.'],
+  ['1930s to 1950s', 'Throughout the 1930s to the 1950s, what was then Naz-Dar focused on developing new inks to meet the increasingly sophisticated demands of screen printers. The growth of the plastics industry was a major factor in the expanded use of screen printing in the 50s and 60s. During this period the Company\'s first extensive R&D programs were established to keep pace with the rapidly increasing demand for higher performance screen printing products.'],
+  ['1960s and 70s', 'In the 1960s and 70s, relationships were established with the core of Nazdar\'s distribution network. Through this network Nazdar now serves the U.S. and international markets with distribution that brings Nazdar\'s family of imaging products to Canada, Mexico, Central and South America, Asia, Europe, Africa and Australia.'],
+  ['1977', 'Nazdar Company was purchased by Thrall Enterprises, Inc. in 1977 and its headquarters moved to Shawnee, KS.'],
+  ['1982', 'In 1982, Naz-Dar acquired KC Coatings. By combining the industry\'s most popular ink lines, most extensive distribution, and most advanced R&D capabilities under one name, the acquisition ensured that the new Naz-Dar/KC would always be at the forefront of innovative research and product development.'],
+  ['1995', 'Anticipating the acceptance of digital technology in the screen printing market, in 1995, Nazdar established initiatives dedicated to serve the needs of the large format digital printing industry.'],
+  ['1997', 'In 1997, Nazdar acquired the Canadian company, Ink Dezyne, and expanded the already successful development of digital inks.'],
+  ['2005', 'In 2005, Nazdar created two main operating divisions: Nazdar Ink Technologies and Nazdar SourceOne.'],
+  ['2006', 'In 2006, Thrall Enterprises, Inc. acquired Lyson Ltd. in the United Kingdom and made this Digital Ink Manufacturer a part of Nazdar Ink Technologies under the name Nazdar Ltd. This acquisition provided a two-fold benefit by expanding the Company’s digital ink products as well as establishing a stronger distribution presence in the European markets.']
+];
+class Component extends DCLogic {
+  renderVals() { return { events: EV.map(([y, t]) => ({ y, t })) }; }
+}
+</script>
+</body>
+</html>

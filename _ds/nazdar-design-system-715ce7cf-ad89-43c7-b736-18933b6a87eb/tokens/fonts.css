@@ -1,0 +1,15 @@
+/* NAZDAR WEBFONTS — Campton (licensed, supplied by Nazdar Marketing Communications).
+   Weights map to the brand guide's four: Light 300 / Book 400 / Medium 500 / Bold 700.
+   SemiBold 600 and Black 900 are included for display use only.
+   OTF is served directly; ask Marketing for a woff2 kit if payload size matters. */
+
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonLight.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonLightItalic.otf") format("opentype");font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonBook.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonBookItalic.otf") format("opentype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonMedium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonMediumItalic.otf") format("opentype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonSemiBold.otf") format("opentype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonBold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonBoldItalic.otf") format("opentype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:"Campton";src:url("../assets/fonts/CamptonBlack.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}

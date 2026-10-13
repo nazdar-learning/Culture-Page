@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+  <title>Benefits | Careers | Nazdar</title>
+  <style>body{margin:0;background:#fff}a{color:var(--nz-text-link)}a:hover{color:var(--color-nz-red-dark)}</style>
+</helmet>
+<div style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary);background:#fff;min-height:100vh">
+  <dc-import name="CareersHeader" page="benefits" hint-size="100%,150px"></dc-import>
+  <main style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 48px;display:grid;gap:20px">
+      <div class="nz-label" style="color:var(--nz-accent-ink)">Life at Nazdar</div>
+      <h1 style="margin:0;font-size:49px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Your benefits at Nazdar</h1>
+      <p style="margin:0;font-size:20px;line-height:1.55">Why people work here</p>
+    </section>
+    <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:2px solid var(--nz-accent);border-bottom:1px solid var(--nz-border)">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div style="padding:24px 24px 28px 0;display:grid;gap:8px;align-content:start">
+          <div style="font-size:49px;line-height:1;letter-spacing:-0.02em;font-weight:700;color:var(--nz-accent-ink)">{{ s.v }}</div>
+          <div style="line-height:1.45;max-width:220px">{{ s.l }}</div>
+        </div>
+      </sc-for>
+    </section>
+    <section style="padding:56px 0 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px 56px;align-items:start">
+      <div style="display:grid;gap:16px">
+        <div class="nz-label" style="color:var(--nz-text-secondary)">DELTA Well-Being Program</div>
+        <h2 style="margin:0;font-size:39px;line-height:1.15;letter-spacing:-0.02em;font-weight:700;text-wrap:balance">Award-winning health and wellness programs</h2>
+        <img src="https://www.nazdar.com/portals/0/Promo/Images/badges.png" alt="Wellness award badges" style="max-width:100%;height:auto;display:block;margin-top:8px">
+      </div>
+      <div style="display:grid;gap:16px">
+        <p style="margin:0;line-height:1.55;text-wrap:pretty">At Nazdar, employee well-being is part of our culture. Through our award-winning DELTA Well-Being Program, we support the physical, emotional, financial, and social well-being of our employees and their families. DELTA, which originated from Diet, Exercise, and Lifestyle Turn-Around, represents our commitment to positive, lasting change and helping employees live healthier lives.</p>
+        <p style="margin:0;line-height:1.55;text-wrap:pretty">Our commitment to well-being has earned both local and national recognition. Year after year, Nazdar receives recognition through the Cigna Healthy Workforce Designation, the American Heart Association Well-Being Works Better Scorecard, and the Kansas City Business Journal's Healthiest Employers program. Most recently, Nazdar was named one of the 2026 Healthiest 100 Workplaces in America, earning the #35 ranking nationwide for its commitment to employee well-being and exceptional wellness programming.</p>
+        <p style="margin:0;line-height:1.55;text-wrap:pretty">While well-being is a cornerstone of our culture, we also provide a competitive and comprehensive benefits package designed to support employees through every stage of life.</p>
+      </div>
+    </section>
+    <section style="padding:48px 0 64px;border-top:1px solid var(--nz-border);display:grid;gap:24px">
+      <div class="nz-label" style="color:var(--nz-text-secondary)">What’s included</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+        <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+          <x-import component-from-global-scope="NazdarDesignSystem_715ce7.Card" title="{{ g.title }}" hint-size="100%,200px">
+            <ul style="margin:0;padding-left:20px;display:grid;gap:8px;line-height:1.55">
+              <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="3"><li>{{ i }}</li></sc-for>
+            </ul>
+          </x-import>
+        </sc-for>
+      </div>
+    </section>
+  </main>
+  <dc-import name="CareersFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STATS = [['$200+', 'Earned each year through wellness participation'], ['401(k)', 'Retirement savings plan with company match'], ['$0', 'Virtual doctor visits, 24/7, no copays or fees'], ['HSA', 'Health Savings Account with employer contribution']];
+const GROUPS = [
+  ['Health coverage', ['Medical, dental and vision, with prescription savings', 'Multiple plan options for individuals and families', 'Flexible Spending Accounts available', 'Company-paid life insurance and disability coverage']],
+  ['Virtual care and mental health', ['Virtual doctor visits 24/7, no copays, family included', 'Unlimited mental health counseling, by phone or video', 'Employee Assistance Program, virtual or in person', 'Personalized weight management service']],
+  ['DELTA Well-Being Program', ['Cash incentives and healthcare premium discounts', 'Wellness challenges and healthy habit tracking', 'Resources for physical, emotional, financial and lifestyle well-being']],
+  ['Money, time and growth', ['Paid time off, company paid holidays, floating holidays, volunteer time off and Wellness PTO', 'Educational Assistance Program and scholarships for dependents', 'Financial wellness resources', 'Employee discount and perks program']]
+];
+class Component extends DCLogic {
+  renderVals() { return { stats: STATS.map(([v, l]) => ({ v, l })), groups: GROUPS.map(([title, items]) => ({ title, items })) }; }
+}
+</script>
+</body>
+</html>

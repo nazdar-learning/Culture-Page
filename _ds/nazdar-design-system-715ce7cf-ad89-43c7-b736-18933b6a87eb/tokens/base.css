@@ -1,0 +1,31 @@
+/* NAZDAR BASE. Surfaces are white. Backgrounds are white or a very light cool
+   gray, never colored fields. */
+
+body{
+  margin:0;
+  background:var(--nz-surface);
+  color:var(--nz-text-primary);
+  font-family:var(--font-body);
+  font-size:var(--text-base);
+  line-height:var(--nz-leading-body);
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:var(--nz-text-link);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--color-nz-red-dark)}
+
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--nz-weight-bold);line-height:var(--nz-leading-tight);letter-spacing:var(--nz-tracking-tight);margin:0}
+code,kbd,pre{font-family:var(--font-mono)}
+
+*:focus-visible{outline:2px solid var(--nz-border-focus);outline-offset:2px}
+
+/* Small uppercase label, the brand's one recurring text device */
+.nz-label{font-size:var(--text-xs);font-weight:var(--nz-weight-bold);text-transform:uppercase;letter-spacing:var(--nz-tracking-label-wide);color:var(--nz-text-secondary)}
+
+/* Angular red rule. A structural echo of the mark's diagonal cut, not a
+   reproduction of it. Never a gradient. */
+.nz-rule-diagonal{height:6px;background:var(--nz-accent);clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
+}

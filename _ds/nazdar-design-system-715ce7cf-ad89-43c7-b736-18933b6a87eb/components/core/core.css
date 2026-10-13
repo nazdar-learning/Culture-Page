@@ -1,0 +1,56 @@
+/* Nazdar component styles. Values transcribed exactly from the source Tailwind
+   utility strings in nazdar-design-system/src/components/*.jsx. No hex here. */
+
+/* ---- Button ---- */
+.nz-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--nz-space-2);font-family:var(--font-body);font-weight:var(--nz-weight-bold);cursor:pointer;border-radius:var(--radius-nz-md);border:1px solid transparent;transition:background-color var(--nz-duration) var(--nz-ease),color var(--nz-duration) var(--nz-ease),border-color var(--nz-duration) var(--nz-ease);text-decoration:none;line-height:var(--nz-leading-snug)}
+.nz-btn--sm{font-size:var(--text-sm);padding:6px 12px}
+.nz-btn--md{font-size:var(--text-base);padding:10px 18px}
+.nz-btn--lg{font-size:var(--text-lg);padding:12px 24px}
+.nz-btn--primary{background:var(--nz-accent);color:var(--nz-accent-text)}
+.nz-btn--primary:hover:not(:disabled){background:var(--nz-accent-dark)}
+.nz-btn--secondary{background:#fff;color:var(--nz-accent-ink);border-color:var(--nz-border-strong)}
+.nz-btn--secondary:hover:not(:disabled){background:var(--color-nz-neutral-50)}
+.nz-btn--destructive{background:var(--color-nz-error);color:#fff}
+.nz-btn--destructive:hover:not(:disabled){filter:brightness(0.9)}
+.nz-btn--quiet{background:transparent;color:var(--nz-text-link);text-decoration:underline;padding-left:6px;padding-right:6px}
+.nz-btn--quiet:hover:not(:disabled){color:var(--nz-accent-ink)}
+.nz-btn:disabled{cursor:not-allowed;background:var(--color-nz-neutral-300);color:var(--color-nz-neutral-500);border-color:transparent;filter:none}
+
+/* ---- Badge ---- */
+.nz-badge{display:inline-block;font-size:10px;font-weight:var(--nz-weight-bold);letter-spacing:0.1em;text-transform:uppercase;padding:3px 7px;border-radius:var(--radius-nz-sm);line-height:1.4}
+.nz-badge--brand{background:var(--color-nz-red-dark);color:#fff}
+.nz-badge--neutral{background:var(--color-nz-neutral-200);color:var(--color-nz-neutral-700)}
+.nz-badge--success{background:var(--color-nz-success-bg);color:var(--color-nz-success)}
+.nz-badge--warning{background:var(--color-nz-warning-bg);color:var(--color-nz-warning)}
+.nz-badge--error{background:var(--color-nz-error-bg);color:var(--color-nz-error)}
+
+/* ---- Card ---- */
+.nz-card{background:#fff;border:1px solid var(--nz-border);border-radius:var(--radius-nz-md);box-shadow:var(--shadow-nz-sm);overflow:hidden}
+.nz-card__head{background:var(--nz-accent);color:var(--nz-accent-text);padding:12px 16px}
+.nz-card__head p{margin:0;font-family:var(--font-display);font-weight:var(--nz-weight-bold);font-size:var(--text-lg)}
+.nz-card__body{padding:16px}
+
+/* ---- Alert. Hard left border, never an icon circle. ---- */
+.nz-alert{display:flex;gap:12px;padding:16px;margin-bottom:12px;border-radius:var(--radius-nz-md);border-left:4px solid;font-size:var(--text-sm)}
+.nz-alert__mark{font-weight:var(--nz-weight-bold);flex-shrink:0}
+.nz-alert__body strong{display:block}
+.nz-alert--success{background:var(--color-nz-success-bg);border-color:var(--color-nz-success);color:var(--color-nz-success-text)}
+.nz-alert--warning{background:var(--color-nz-warning-bg);border-color:var(--color-nz-warning);color:var(--color-nz-warning-text)}
+.nz-alert--error{background:var(--color-nz-error-bg);border-color:var(--color-nz-error);color:var(--color-nz-error-text)}
+.nz-alert--info{background:var(--color-nz-info-bg);border-color:var(--color-nz-info);color:var(--color-nz-info-text)}
+
+/* ---- Field: Input, Select ---- */
+.nz-field{max-width:24rem}
+.nz-field__label{display:block;font-size:var(--text-sm);font-weight:var(--nz-weight-bold);margin-bottom:8px;color:var(--color-nz-gray-dark)}
+.nz-field__control{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:var(--radius-nz-md);background:#fff;color:var(--color-nz-gray-dark);font-family:var(--font-body);font-size:var(--text-base);border:1px solid var(--nz-border-strong);transition:border-color var(--nz-duration) var(--nz-ease)}
+.nz-field__control::placeholder{color:var(--color-nz-neutral-400)}
+.nz-field__control:focus{border-color:var(--color-nz-blue-dark)}
+.nz-field__control--error,.nz-field__control--error:focus{border-color:var(--color-nz-error)}
+.nz-field__control:disabled{background:var(--color-nz-neutral-50);color:var(--color-nz-neutral-500);cursor:not-allowed}
+.nz-field__hint{font-size:var(--text-xs);color:var(--color-nz-neutral-500);margin:8px 0 0}
+.nz-field__error{font-size:var(--text-xs);color:var(--color-nz-error);font-weight:var(--nz-weight-bold);margin:8px 0 0}
+
+/* ---- Table. 2px accent underline on the header, single hairline rows. ---- */
+.nz-table{width:100%;border-collapse:collapse;font-size:var(--text-sm)}
+.nz-table th{text-align:left;padding:12px;background:var(--color-nz-neutral-50);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;border-bottom:2px solid var(--nz-accent)}
+.nz-table td{padding:12px;border-bottom:1px solid var(--color-nz-neutral-200)}

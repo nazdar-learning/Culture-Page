@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+  <title>FAQ | Careers | Nazdar</title>
+  <style>body{margin:0;background:#fff}a{color:var(--nz-text-link)}a:hover{color:var(--color-nz-red-dark)}</style>
+</helmet>
+<div style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary);background:#fff;min-height:100vh">
+  <dc-import name="CareersHeader" page="faq" hint-size="100%,150px"></dc-import>
+  <main style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 48px;display:grid;gap:20px">
+      <div class="nz-label" style="color:var(--nz-accent-ink)">Company</div>
+      <h1 style="margin:0;font-size:49px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Frequently asked questions</h1>
+    </section>
+    <section style="padding-bottom:64px;border-top:2px solid var(--nz-accent)">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="10">
+        <div style="border-bottom:1px solid var(--nz-border)">
+          <button onClick="{{ f.toggle }}" aria-expanded="{{ f.isOpen }}" style="all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding:20px 4px;transition:background-color 200ms ease" style-hover="background-color:var(--nz-surface-sunken)">
+            <span style="font-size:20px;font-weight:700;letter-spacing:-0.01em;line-height:1.3">{{ f.q }}</span>
+            <span aria-hidden="true" style="font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:20px;color:var(--nz-accent-ink);width:20px;text-align:center">{{ f.mark }}</span>
+          </button>
+          <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
+            <p style="margin:0;padding:0 4px 24px;line-height:1.55;max-width:720px;text-wrap:pretty">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </section>
+  </main>
+  <dc-import name="CareersFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FAQ = [
+  ['How did Nazdar get its name?', 'When the founders were meeting about the business and the subject of the name came up, they looked at the coasters in the bar where the meeting was being conducted. The coasters had "Nazdrovia" printed on them, which loosely translated in Czechoslovakia means "To your health!" A little manipulation and Nazdar was born in 1922.'],
+  ['What is the culture like?', 'Nazdar is a family friendly organization that truly cares about its employees. We strive to challenge our employees and help them make the most of of their careers. Expectations are often high, but the work is rewarding, the people are fun and friendly, and the environment is comfortable.'],
+  ['What is the dress code at Nazdar?', 'With the exception of Fridays, Nazdar has a business casual work environment; and Fridays are designated "casual days." While some positions in our manufacturing and distribution facilities may limit certain clothing for safety reasons, most of our offices are filled with people wearing business casual clothes. Dress nicely but comfortably.'],
+  ['How many people work at Nazdar and all its divisions?', 'There are nearly 500 employees currently at Nazdar across the globe.'],
+  ['How is Nazdar structured?', 'Nazdar and its affiliates are family-owned by the Thrall Family. Thrall Enterprises, Inc. is based in Chicago, IL, and Nazdar\'s World Headquarters is located in Shawnee, KS, a suburb of Kansas City, MO. We have two divisions; Nazdar SourceOne and Nazdar Ink Technologies. The former is our distribution division and the latter is our manufacturing division.'],
+  ['How long do most people stay with Nazdar?', 'The average tenure at our company is more than 11 years across all our locations, including our international facilities. We strive to create a work environment at Nazdar that balances experience with a steady influx of new employees with innovative ideas. Some employees have been at Nazdar for over 20 years; and we also bring in new employees who bring dynamic and fresh ideas. Our employees tend to stay at Nazdar for a long time because of the challenging and rewarding work environment.'],
+  ['What are the core business hours at Nazdar?', 'Generally, offices and warehouses are open from 8:00 am to 5:00 pm Monday through Friday in their respective time zones. Some individuals work other hours, depending on the nature of their job, the needs of the organization and/or the employee\'s needs.'],
+  ['Does Nazdar promote from within and/or offer advancement opportunities?', 'Absolutely. We believe in contributing to the personal and professional growth of our associates. This applies to internal promotions as well as internal training and development within an associate\'s position or department. Because we invest so much in our people, we aim to promote from within the organization.'],
+  ['What can I expect from the on-boarding process?', 'Our goal is to provide all newly hired employees with the tools and information they need to start immediately laying a foundation of success with us. Your on-boarding experience will be customized to your career path with us and will align with the level, function and area of your position within our organization.'],
+  ['Can I connect with "Nazdar Careers" using social media?', 'Yes, and we hope you will! Please follow us on Twitter, visit us at our Nazdar Careers Facebook Page (don\'t forget to "like" us) and our Linked In pages too.']
+];
+class Component extends DCLogic {
+  state = { open: { 0: true } };
+  renderVals() {
+    return { faqs: FAQ.map(([q, a], i) => {
+      const isOpen = !!this.state.open[i];
+      return { q, a, isOpen, mark: isOpen ? '−' : '+', toggle: () => this.setState(s => ({ open: { ...s.open, [i]: !s.open[i] } })) };
+    }) };
+  }
+}
+</script>
+</body>
+</html>

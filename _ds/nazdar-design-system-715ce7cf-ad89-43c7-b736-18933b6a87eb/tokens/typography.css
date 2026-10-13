@@ -1,0 +1,39 @@
+/* NAZDAR TYPOGRAPHY TOKENS
+
+   Campton is the brand face in Light 300 / Book 400 / Medium 500 / Bold 700.
+   The licensed webfont ships with this system — see tokens/fonts.css.
+   The Calibri / Arial fallbacks stay in the stack: they are the guide's own
+   instruction for Microsoft Office output and for any surface that cannot
+   load the webfont. Never substitute a Google Font lookalike (Montserrat,
+   Poppins, Jost). */
+
+:root{
+  --font-display:"Campton", Calibri, Arial, Helvetica, sans-serif;
+  --font-body:"Campton", Calibri, Arial, Helvetica, sans-serif;
+  --font-mono:ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --nz-weight-light:300;
+  --nz-weight-book:400;
+  --nz-weight-medium:500;
+  --nz-weight-bold:700;
+
+  /* EXTENDED: 1.25 ratio on a 16px base */
+  --text-xs:0.75rem;     /* 12px */
+  --text-sm:0.875rem;    /* 14px */
+  --text-base:1rem;      /* 16px */
+  --text-lg:1.25rem;     /* 20px */
+  --text-xl:1.5625rem;   /* 25px */
+  --text-2xl:1.953rem;   /* 31px */
+  --text-3xl:2.441rem;   /* 39px */
+  --text-4xl:3.052rem;   /* 49px */
+
+  --nz-leading-none:1;
+  --nz-leading-tight:1.15;
+  --nz-leading-snug:1.35;
+  --nz-leading-body:1.55;
+
+  /* Negative tracking on display sizes, wide tracking on small caps labels */
+  --nz-tracking-tight:-0.02em;
+  --nz-tracking-label:0.08em;
+  --nz-tracking-label-wide:0.12em;
+}

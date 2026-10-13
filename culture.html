@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+  <title>Culture | Careers | Nazdar</title>
+  <style>body{margin:0;background:#fff}a{color:var(--nz-text-link)}a:hover{color:var(--color-nz-red-dark)}</style>
+</helmet>
+<div style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary);background:#fff;min-height:100vh">
+  <dc-import name="CareersHeader" page="culture" hint-size="100%,150px"></dc-import>
+  <main style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 48px;display:grid;gap:20px">
+      <div class="nz-label" style="color:var(--nz-accent-ink)">Life at Nazdar</div>
+      <h1 style="margin:0;font-size:49px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Nazdar culture</h1>
+      <p style="margin:0;font-size:20px;line-height:1.55;max-width:680px;text-wrap:pretty"><strong>What makes working at Nazdar different from working for other companies? <em>We value big ideas and fresh perspectives.</em></strong></p>
+      <p style="margin:0;line-height:1.55;max-width:680px;text-wrap:pretty">Nazdar is a privately-owned company and we have a collaborative environment where employees are encouraged to share their ideas and perspectives. This culture helps to ensure that:</p>
+      <ul style="margin:0;padding-left:20px;display:grid;gap:6px;line-height:1.55;max-width:680px">
+        <li>Our environment is one of the best in the industry.</li>
+        <li>Our products are of highest quality.</li>
+        <li>Our employees have a passion for our industry and our customers.</li>
+        <li>We operate with a high level of integrity and do what’s right.</li>
+      </ul>
+    </section>
+    <div class="nz-rule-diagonal"></div>
+    <section style="padding:48px 0;display:grid;gap:32px">
+      <div style="display:grid;gap:8px">
+        <div class="nz-label" style="color:var(--nz-text-secondary)">How we work</div>
+        <h2 style="margin:0;font-size:39px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Nazdar operating principles</h2>
+      </div>
+      <div style="display:grid">
+        <sc-for list="{{ principles }}" as="p" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:24px 0;border-top:1px solid var(--nz-border)">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:20px;color:var(--nz-accent-ink)">{{ p.n }}</div>
+            <div style="display:grid;gap:10px;max-width:720px">
+              <h3 style="margin:0;font-size:20px;line-height:1.3;font-weight:700">{{ p.title }}</h3>
+              <sc-for list="{{ p.body }}" as="b" hint-placeholder-count="1"><p style="margin:0;line-height:1.55;text-wrap:pretty">{{ b }}</p></sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:0;padding-top:24px;border-top:1px solid var(--nz-border);font-size:20px;line-height:1.55;max-width:720px">For nearly 100 years, Nazdar has been guided by these principles, which have made us the leading company in the screen printing industry.</p>
+    </section>
+  </main>
+  <dc-import name="CareersFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const P = [
+  ['We are dedicated to meeting customer requirements.', ['Our success depends totally on our ability to satisfy our customers. Customers judge our products and services on the basis of their own needs and service requirements. Their assessments — not ours — are the only measure of our success.']],
+  ['We will pursue quality in all that we do.', ['Nazdar has built its reputation on quality and we will continue to meet and improve on the standards we have set. We will ensure that all employees have the opportunity to use the concepts, tools and methods of continuous improvement.']],
+  ['We respect and value all employee, supplier and business partner relationships.', ['We will invest in the development and education of our employees, who will share in the success of our business.']],
+  ['We accept responsibility as a corporate citizen.', ['We acknowledge our obligation as a business institution to help improve the quality of the society and community of which we are a part. In the conduct of all our business activities, we take positive actions to ensure equal opportunity to all.', 'Our goal is to stand in the forefront of companies working to make our world a better place.']],
+  ['We will conduct all business affairs ethically, with integrity, and in support of our mission and operating principles, and with free market values.', []]
+];
+class Component extends DCLogic {
+  renderVals() { return { principles: P.map(([title, body], i) => ({ n: String(i + 1).padStart(2, '0'), title, body })) }; }
+}
+</script>
+</body>
+</html>

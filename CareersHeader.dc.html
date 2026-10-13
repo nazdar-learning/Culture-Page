@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+</helmet>
+<div style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary)">
+  <header style="border-bottom:1px solid var(--nz-border)">
+    <div style="max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap">
+      <a href="https://www.nazdar.com/" style="display:flex"><img src="assets/Logo-Nazdar-Black.png" alt="Nazdar" style="width:140px;height:auto;display:block"></a>
+      <nav style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;font-size:14px;font-weight:500">
+        <a href="https://www.nazdar.com/" style="color:var(--nz-text-primary);text-decoration:none;white-space:nowrap">Products and services</a>
+        <a href="https://www.nazdar.com/Where-To-Buy" style="color:var(--nz-text-primary);text-decoration:none;white-space:nowrap">Where to buy</a>
+        <a href="index.html" style="color:var(--nz-accent-ink);text-decoration:none;font-weight:700;white-space:nowrap">Careers</a>
+        <a href="https://www.nazdar.com/" style="color:var(--nz-text-primary);text-decoration:none;white-space:nowrap">Contact us</a>
+      </nav>
+    </div>
+  </header>
+  <div style="border-bottom:1px solid var(--nz-border);background:var(--nz-surface-sunken)">
+    <nav aria-label="Careers" style="max-width:1080px;margin:0 auto;padding:0 24px;display:flex;gap:4px 24px;flex-wrap:wrap;align-items:center;font-size:14px">
+      <sc-for list="{{ links }}" as="l" hint-placeholder-count="7">
+        <a href="{{ l.href }}" aria-current="{{ l.current }}" style="padding:14px 0;text-decoration:none;white-space:nowrap;color:{{ l.color }};font-weight:{{ l.weight }}">{{ l.label }}</a>
+      </sc-for>
+      <a href="https://recruiting.ultipro.com/NAZ1000NAZ/JobBoard/f0764a2c-4470-4fa2-9660-98239285d203/?q=&amp;o=postedDateDesc" style="padding:14px 0;margin-left:auto;white-space:nowrap;font-weight:700;color:var(--nz-accent-ink);text-decoration:none">Job postings ↗</a>
+    </nav>
+  </div>
+  <sc-if value="{{ hasCrumb }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width:1080px;margin:0 auto;padding:24px 24px 0;font-size:14px;color:var(--nz-text-secondary);display:flex;gap:8px;flex-wrap:wrap">
+      <a href="https://www.nazdar.com/">Home</a><span aria-hidden="true">/</span>
+      <a href="index.html">Careers</a>
+      <sc-for list="{{ crumbs }}" as="c" hint-placeholder-count="1"><span aria-hidden="true">/</span><span style="color:var(--nz-text-primary)">{{ c }}</span></sc-for>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1080, &quot;height&quot;: 160}, &quot;page&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;overview&quot;, &quot;culture&quot;, &quot;community&quot;, &quot;benefits&quot;, &quot;history&quot;, &quot;leadership&quot;, &quot;faq&quot;], &quot;default&quot;: &quot;overview&quot;, &quot;tsType&quot;: &quot;string&quot;}}">
+const LINKS = [
+  ['overview', 'Overview', 'index.html'], ['culture', 'Culture', 'culture.html'], ['community', 'Community', 'community.html'],
+  ['benefits', 'Benefits', 'benefits.html'], ['history', 'History', 'history.html'], ['leadership', 'Leadership team', 'leadership.html'], ['faq', 'FAQ', 'faq.html']
+];
+const SECTION = { culture: 'Life at Nazdar', community: 'Life at Nazdar', benefits: 'Life at Nazdar', history: 'Company', leadership: 'Company', faq: 'Company' };
+class Component extends DCLogic {
+  renderVals() {
+    const page = this.props.page ?? 'overview';
+    const cur = LINKS.find(l => l[0] === page);
+    return {
+      links: LINKS.map(([id, label, href]) => ({ label, href, current: id === page ? 'page' : undefined,
+        color: id === page ? 'var(--nz-accent-ink)' : 'var(--nz-text-primary)', weight: id === page ? 700 : 500 })),
+      hasCrumb: page !== 'overview',
+      crumbs: page === 'overview' ? [] : [SECTION[page], cur ? cur[1] : '']
+    };
+  }
+}
+</script>
+</body>
+</html>

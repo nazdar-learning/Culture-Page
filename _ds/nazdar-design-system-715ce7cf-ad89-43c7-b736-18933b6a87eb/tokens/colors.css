@@ -1,0 +1,76 @@
+/* NAZDAR COLOR TOKENS
+   Source: Nazdar Logo Guidelines (2023), via nazdar-design-system/src/styles/tokens.css
+   BRAND layer    = in the official guide. Authoritative.
+   EXTENDED layer = added for UI usability. NOT approved by Marketing Communications. */
+
+:root{
+  /* ---- BRAND ---- */
+  --color-nz-red:#CF102D;        /* PMS 186  | 5.58:1  | fills, display, primary action */
+  --color-nz-red-dark:#A91623;   /* PMS 187  | 7.43:1  | brand text, links, hover */
+  --color-nz-green:#A3CF60;      /* PMS 367  | 1.80:1  | Ink Technologies, fill only */
+  --color-nz-green-dark:#7FA44C; /* PMS 576  | Ink Technologies, darker */
+  --color-nz-blue:#0099D6;       /* PMS 2925 | 3.22:1  | SourceOne */
+  --color-nz-blue-dark:#007CBA;  /* PMS 7461 | 4.57:1  | links, focus rings */
+  --color-nz-black:#000000;
+  --color-nz-gray-dark:#323E48;  /* PMS 432  | 10.95:1 | default body text */
+  --color-nz-gray-cool:#666666;  /* 5.74:1   | secondary text, captions */
+
+  /* ---- EXTENDED: neutral ramp, hue-matched to PMS 432 ---- */
+  --color-nz-neutral-50:#F7F8F9;
+  --color-nz-neutral-100:#EDEFF1;
+  --color-nz-neutral-200:#DDE1E5;
+  --color-nz-neutral-300:#C3C9CF;
+  --color-nz-neutral-400:#98A1AA;
+  --color-nz-neutral-500:#6B7580;
+  --color-nz-neutral-600:#4E5862;
+  --color-nz-neutral-700:#323E48;
+  --color-nz-neutral-800:#232C33;
+  --color-nz-neutral-900:#14191D;
+
+  /* ---- EXTENDED: feedback. Deliberately excludes brand red. ---- */
+  --color-nz-success:#2E7D4F;
+  --color-nz-success-bg:#EAF4EE;
+  --color-nz-success-text:#1E4F33;
+  --color-nz-warning:#B4690E;
+  --color-nz-warning-bg:#FDF3E3;
+  --color-nz-warning-text:#6E4109;
+  --color-nz-error:#8C1D2B;
+  --color-nz-error-bg:#FBEDEF;
+  --color-nz-error-text:#5E131D;
+  --color-nz-info:#007CBA;
+  --color-nz-info-bg:#E6F4FB;
+  --color-nz-info-text:#004E75;
+
+  /* ---- SEMANTIC. Components read these, never raw brand colors. ---- */
+  --nz-accent:var(--color-nz-red);
+  --nz-accent-dark:var(--color-nz-red-dark);  /* FILL ONLY. Hover/pressed fills. Not guaranteed to hold text. */
+  --nz-accent-ink:var(--color-nz-red-dark);  /* TEXT ONLY. Accent-colored text on a light surface. Always clears AA. */
+  --nz-accent-text:#FFFFFF;
+
+  --nz-text-primary:var(--color-nz-gray-dark);
+  --nz-text-secondary:var(--color-nz-gray-cool);
+  --nz-text-link:var(--color-nz-blue-dark);
+  --nz-border:var(--color-nz-neutral-200);
+  --nz-border-strong:var(--color-nz-neutral-300);
+  --nz-border-focus:var(--color-nz-blue-dark);
+  --nz-surface:#FFFFFF;
+  --nz-surface-sunken:var(--color-nz-neutral-50);
+}
+
+/* Division theming. The Z symbol stays red in all three logos, so only the
+   surrounding accent changes. Never recolor the Z.
+
+   --nz-accent-dark and --nz-accent-ink diverge on Ink Technologies and that is
+   deliberate. PMS 576 (#7FA44C) is 2.87:1 on white, so it can be a hover FILL
+   but never TEXT. Rather than invent a darker green outside the official nine,
+   Ink Technologies borrows PMS 432 for accent-colored text: brand-approved and
+   10.95:1. If Marketing Communications approves a darker green, set it here. */
+.nz-theme-master{--nz-accent:var(--color-nz-red);--nz-accent-dark:var(--color-nz-red-dark);--nz-accent-ink:var(--color-nz-red-dark);--nz-accent-text:#FFFFFF}
+.nz-theme-inktech{--nz-accent:var(--color-nz-green);--nz-accent-dark:var(--color-nz-green-dark);--nz-accent-ink:var(--color-nz-gray-dark);--nz-accent-text:var(--color-nz-neutral-900)}
+.nz-theme-sourceone{--nz-accent:var(--color-nz-blue);--nz-accent-dark:var(--color-nz-blue-dark);--nz-accent-ink:var(--color-nz-blue-dark);--nz-accent-text:#FFFFFF}
+
+/* CONFLICTS in the source PDF, unresolved. The guide's hex column disagrees with
+   its own RGB column twice; RGB matches the stated Pantone, so RGB wins.
+   1. Nazdar Red: RGB 207/16/45 = #CF102D (in use), not the guide's #D90000.
+   2. Dark Gray:  RGB 50/62/72  = #323E48 (in use), not the guide's #191919.
+   If Marketing rules the other way, change those two values here. Nothing else moves. */

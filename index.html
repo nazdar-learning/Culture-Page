@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+  <title>Careers | Nazdar</title>
+  <style>body{margin:0;background:#fff}a{color:var(--nz-text-link)}a:hover{color:var(--color-nz-red-dark)}</style>
+</helmet>
+<div class="{{ themeClass }}" style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary);background:#fff;min-height:100vh">
+  <dc-import name="CareersHeader" page="overview" hint-size="100%,120px"></dc-import>
+
+  <main style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <section style="padding:56px 0;display:grid;gap:24px">
+      <div class="nz-label" style="color:var(--nz-accent-ink)">Careers</div>
+      <h1 style="margin:0;font-size:49px;line-height:1.15;letter-spacing:-0.02em;font-weight:700;max-width:820px;text-wrap:balance">Thinking about a career change? Think Nazdar. Let us tell you why.</h1>
+      <p style="margin:0;font-size:20px;line-height:1.55;max-width:680px;text-wrap:pretty"><strong><em>At Nazdar, we don’t offer jobs, we offer careers.</em></strong> We are a forward-thinking organization with a dynamic, family-oriented culture that attracts and retains high quality people. If you fit this description and are seeking this environment, we invite you to learn more about our organization.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+        <x-import component-from-global-scope="NazdarDesignSystem_715ce7.Button" variant="primary" size="lg" onClick="{{ openBoard }}" hint-size="auto,48px">View job postings</x-import>
+        <x-import component-from-global-scope="NazdarDesignSystem_715ce7.Button" variant="secondary" size="lg" onClick="{{ openVideo }}" hint-size="auto,48px">Watch the overview video</x-import>
+      </div>
+    </section>
+
+    <div class="nz-rule-diagonal"></div>
+
+    <section style="padding:48px 0;display:grid;gap:32px">
+      <div class="nz-label" style="color:var(--nz-text-secondary)">Why Nazdar</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px 56px">
+        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
+          <div style="display:grid;gap:8px;align-content:start">
+            <div style="font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:14px;color:var(--nz-accent-ink)">{{ r.n }}</div>
+            <h3 style="margin:0;font-size:25px;line-height:1.15;letter-spacing:-0.01em;font-weight:700">{{ r.title }}</h3>
+            <p style="margin:0;line-height:1.55;max-width:460px;text-wrap:pretty">{{ r.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="padding:48px 0;border-top:1px solid var(--nz-border);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px 56px;align-items:start">
+      <div style="display:grid;gap:16px">
+        <div class="nz-label" style="color:var(--nz-text-secondary)">About Nazdar</div>
+        <p style="margin:0;line-height:1.55;text-wrap:pretty">Nazdar, headquartered in Shawnee, KS, (a suburb of Kansas City, MO) is a leading manufacturer of screen printing, wide format digital and flexographic inks and a distributor of printing supplies world-wide.</p>
+        <p style="margin:0;line-height:1.55;text-wrap:pretty">As a growing organization with more than 500 employees globally, Nazdar is always seeking new talent. We offer many career opportunities to suit a variety of experience levels, backgrounds and career goals and we provide state of the art tools, support and opportunities to succeed in this fast pace environment. Nazdar offers a competitive compensation and benefit package along with great opportunities for advancement within the organization.</p>
+      </div>
+      <x-import component-from-global-scope="NazdarDesignSystem_715ce7.Card" title="Apply online" hint-size="100%,300px">
+        <div style="display:grid;gap:16px">
+          <p style="margin:0;line-height:1.55">To submit your resumé and qualifications to our Human Resources department, visit our job board, where you will be able to:</p>
+          <ul style="margin:0;padding-left:20px;display:grid;gap:6px;line-height:1.55">
+            <li>View our open positions</li>
+            <li>Submit your resumé</li>
+            <li>Complete our online job application</li>
+            <li>Sign up for our email list to be notified of future job postings</li>
+          </ul>
+          <div style="display:flex">
+            <x-import component-from-global-scope="NazdarDesignSystem_715ce7.Button" variant="primary" onClick="{{ openBoard }}" hint-size="auto,40px">Go to the job board</x-import>
+          </div>
+        </div>
+      </x-import>
+    </section>
+
+    <section style="padding:48px 0;border-top:1px solid var(--nz-border);display:grid;gap:24px">
+      <div class="nz-label" style="color:var(--nz-text-secondary)">Explore</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <div style="display:grid;gap:12px;align-content:start">
+          <h3 style="margin:0;font-size:25px;font-weight:700;letter-spacing:-0.01em">Life at Nazdar</h3>
+          <a href="culture.html" style="font-size:20px;font-weight:500;text-decoration:none">Culture</a>
+          <a href="community.html" style="font-size:20px;font-weight:500;text-decoration:none">Community</a>
+          <a href="benefits.html" style="font-size:20px;font-weight:500;text-decoration:none">Benefits</a>
+        </div>
+        <div style="display:grid;gap:12px;align-content:start">
+          <h3 style="margin:0;font-size:25px;font-weight:700;letter-spacing:-0.01em">Company</h3>
+          <a href="history.html" style="font-size:20px;font-weight:500;text-decoration:none">History</a>
+          <a href="leadership.html" style="font-size:20px;font-weight:500;text-decoration:none">Executive leadership team</a>
+          <a href="faq.html" style="font-size:20px;font-weight:500;text-decoration:none">FAQ</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:32px 0 56px;border-top:1px solid var(--nz-border)">
+      <p style="margin:0;line-height:1.55;color:var(--nz-text-secondary)">Thank you for your interest in exploring a career at Nazdar. Nazdar is an Equal Opportunity Employer.</p>
+    </section>
+  </main>
+
+  <dc-import name="CareersFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;division&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;master&quot;, &quot;inktech&quot;, &quot;sourceone&quot;], &quot;default&quot;: &quot;master&quot;, &quot;tsType&quot;: &quot;'master'|'inktech'|'sourceone'&quot;}}">
+const BOARD = 'https://recruiting.ultipro.com/NAZ1000NAZ/JobBoard/f0764a2c-4470-4fa2-9660-98239285d203/?q=&o=postedDateDesc';
+const REASONS = [
+  ['Strong, well-established company', 'Nazdar has over 90 years of continuous growth and has a strong commitment to our Vision for the future.'],
+  ['Employees who are genuinely happy', 'Several candidates come to work for us because of the reputation we have established in the marketplace. It is not by mistake that our average tenure at Nazdar is 11 years compared to the private sector industries where employees have the highest median tenure of 6.1 years.'],
+  ['Excellent company benefits', 'Nazdar provides a comprehensive benefit package which focuses on the needs of our employees and their families.'],
+  ['Competitive compensation', 'Our compensation philosophy is to be externally competitive while remaining internally equitable.'],
+  ['Impressive job growth and development', 'In addition to internal training programs, Nazdar offers tuition reimbursement to all who see to enhance their education and develop in their careers.']
+];
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      themeClass: 'nz-theme-' + (this.props.division ?? 'master'),
+      reasons: REASONS.map(([title, body], i) => ({ n: String(i + 1).padStart(2, '0'), title, body })),
+      openBoard: () => window.open(BOARD, '_blank', 'noopener'),
+      openVideo: () => window.open('https://www.youtube.com/watch?v=KiIXTyPfbOw', '_blank', 'noopener')
+    };
+  }
+}
+</script>
+</body>
+</html>

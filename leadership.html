@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/space.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/tokens/base.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/components/core/core.css">
+  <link rel="stylesheet" href="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/styles.css">
+  <script src="_ds/nazdar-design-system-715ce7cf-ad89-43c7-b736-18933b6a87eb/_ds_bundle.js"></script>
+  <title>Executive leadership team | Careers | Nazdar</title>
+  <style>body{margin:0;background:#fff}a{color:var(--nz-text-link)}a:hover{color:var(--color-nz-red-dark)}</style>
+</helmet>
+<div style="font-family:Campton, Calibri, Arial, sans-serif;color:var(--nz-text-primary);background:#fff;min-height:100vh">
+  <dc-import name="CareersHeader" page="leadership" hint-size="100%,150px"></dc-import>
+  <main style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <section style="padding:40px 0 48px;display:grid;gap:20px">
+      <div class="nz-label" style="color:var(--nz-accent-ink)">Company</div>
+      <h1 style="margin:0;font-size:49px;line-height:1.15;letter-spacing:-0.02em;font-weight:700">Executive leadership team</h1>
+      <p style="margin:0;font-size:20px;line-height:1.55;max-width:680px;text-wrap:pretty">Nazdar Executives are industry leaders focused on delivering great value to our shareholders and superior experiences to our customers.</p>
+    </section>
+    <div class="nz-rule-diagonal"></div>
+    <section style="padding:16px 0 64px;display:grid">
+      <sc-for list="{{ people }}" as="p" hint-placeholder-count="8">
+        <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px 48px;padding:40px 0;border-bottom:1px solid var(--nz-border)">
+          <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;align-items:start">
+            <img src="{{ p.img }}" alt="{{ p.name }}" style="width:120px;height:150px;object-fit:cover;border-radius:4px;background:var(--nz-surface-sunken);display:block">
+            <div style="display:grid;gap:6px">
+              <h2 style="margin:0;font-size:25px;line-height:1.15;letter-spacing:-0.01em;font-weight:700">{{ p.name }}</h2>
+              <div style="font-size:14px;line-height:1.45;color:var(--nz-text-secondary)">{{ p.title }}</div>
+            </div>
+          </div>
+          <div style="display:grid;gap:12px;grid-column:span 2;min-width:0">
+            <sc-for list="{{ p.bio }}" as="b" hint-placeholder-count="1"><p style="margin:0;line-height:1.55;max-width:680px;text-wrap:pretty">{{ b }}</p></sc-for>
+          </div>
+        </article>
+      </sc-for>
+    </section>
+  </main>
+  <dc-import name="CareersFooter" hint-size="100%,260px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const B = 'https://www.nazdar.com/portals/0/Promo/Images/';
+const PEOPLE = [
+  ['Jeff Thrall', 'Executive Chairman, Thrall Enterprises, Inc', 'jthrall.png', ['Jeff joined Thrall Enterprises, Inc. (TEI), a family owned holding company headquartered in Chicago, USA, in 1980 as vice president of corporate development of TEI\'s subsidiary, Nazdar Company, a manufacturer and distributor of screen printing and digital inks and supplies. Jeff was named President of TEI in 1995.', 'Prior to joining TEI, Jeff\'s professional career included a number of appointments in investment banking, commercial lending and administration. Jeff holds a Bachelor of Business Administration degree from Southern Methodist University and an MBA from Northwestern University.']],
+  ['Richard Bowles', 'President and CEO, Nazdar Company', 'rbowles.png', ['Richard joined Nazdar in December 2002, and prior to joining Nazdar, Richard served as Vice President at Minolta-QMS and brought over 18 years of experience in sales and marketing. After several years of success as President of Nazdar\'s Ink Technologies division, Richard became President of the Nazdar Company in January 2018. Richard received his Bachelor of Science in Electrical Engineering from the University of South Alabama.']],
+  ['Mike Steimley', 'Vice President, Chief Financial Officer, Nazdar Company', 'msteimley.png', ['Mike joined the company in 2015. Prior to Nazdar, Mike was Vice President and Chief Financial Officer at Toshiba\'s printing division in the United States & Latin America. He started his career at PricewaterhouseCoopers LLP in audit and IT consulting. Mike graduated with honors from the University of Missouri\'s Master of Accountancy program and is a Certified Public Accountant.']],
+  ['Anissa Elsey', 'Vice President, Chief Human Resources Officer, Nazdar Company', 'AnissaVP.jpg', ['Anissa began her career with Nazdar in January 1999. Anissa is responsible for the oversight and leadership of the human resources functions for 500+ employees. Her HR professional experience began in 1993. Anissa holds a Bachelor of Arts degree in Psychology from the University of Missouri, a Master of Arts degree in Industrial Organizational Psychology from the University of Tulsa, and earned her Senior Professional in Human Resources certification (SPHR).', 'In 2014, Anissa was recognized as one of the 25 "Women who Mean Business" by the Kansas City Business Journal.']],
+  ['Dave Austin', 'Vice President, Chief Operating Officer, Nazdar Company', 'daustin.png', ['Dave joined Nazdar in August 2017. Dave oversees all of Distribution and Manufacturing at Nazdar. Prior to joining Nazdar, Dave worked for GSI, a sister company, as their VP of Finance, Controller and eventually their President before the company was sold. Dave earned his Bachelor of Business Administration (BA) from the University of Texas in Austin, TX and an MBA from DePaul University in Chicago, IL.']],
+  ['Shaun Pan', 'Vice President, Chief Commercial Officer, Nazdar Company', 'span.png', ['Shaun joined Nazdar in July 2022. Shaun oversees all aspects of commercial operations, including sales, marketing, and business development. Shaun brings broad sales, marketing, operation and team leadership experience, with a track record of business transformations, restructuring and revenue/EBIT improvements across a variety of sectors. Shaun holds a Bachelor of Science in Chemical Engineering from Cornell University, a Doctor of Philosophy in Chemical Engineering from Princeton University and an MBA from New York University.']],
+  ['Greg Rupp', 'Vice President, Chief Information Officer, Nazdar Company', 'grupp.png', ['Greg joined Nazdar in June of 2023. Greg leads technology team which provides the infrastructure and applications used daily by all Nazdar employees. Prior to Nazdar, Greg worked in the trucking industry in a technology leadership role supporting the technology for a $5B, 30,000 employee, 300+ location company. Greg started his career as a technology consultant and spent 20+ years developing technology-based solutions for customers large and small. He is an avid Jayhawk having twice graduated from the business school at the University of Kansas. Greg lives in Lawrence, Kansas with his wife Jennifer.']],
+  ['Evan Benbow', 'Vice-President, Research & Development, Nazdar Company', 'ebenbow.png', ['Evan joined Nazdar in August 2021. Prior to joining Nazdar Evan held various positions in the field of chemistry from Development Scientist to Vice-President of Product Technology and Solutions.', 'In his current role, Evan provides leadership and manages research and product development for Nazdar manufactured products. His responsibilities extend globally to the R&D labs in our manufacturing locations in Shawnee, KS and Stockport, UK.', 'Evan has a Bachelor of Science degree in Chemistry from Iowa State University and a Ph.D. in Inorganic Chemistry from Florida State University. Evan is a proven business leader with demonstrated success managing global R&D operations and adapting best practices for optimal efficiency.']]
+];
+class Component extends DCLogic {
+  renderVals() { return { people: PEOPLE.map(([name, title, f, bio]) => ({ name, title, bio, img: B + f })) }; }
+}
+</script>
+</body>
+</html>
